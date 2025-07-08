@@ -642,6 +642,7 @@
             menuCount: menuCount;
 
             const formData = {
+                name,
                 oldCount,
                 birthCount,
                 skinCount,
@@ -676,7 +677,7 @@
             // LINEトークにメッセージを送信
             liff.sendMessages([{
                 type: 'text',
-                text: `≪アンケート≫\n【肌の保湿力の変化】\n・${formData.oldCount}\n\n【ご実感できた肌変化】\n・${formData.birthCount}\n\n【気に入った点】\n・${formData.skinCount}\n\n【継続したいと思えたか】\n・${formData.menuCount}`
+                text: `≪アンケート≫\n【肌の保湿力の変化】\n・${formData.oldCount}\n\n【ご実感できた肌変化】\n・${formData.birthCount}\n\n【気に入った点】\n・${formData.skinCount}\n\n【継続したいと思えたか】\n・${formData.menuCount}\n\n【自由記述】\n・${formData.name}`
             }]).then(() => {
                 /* メッセージ送信成功時の処理 */
                 alert('ご記入ありがとうございます。');
